@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
     View,
     Picker,
-    StyleSheet
+    StyleSheet,
 } from 'react-native';
 
 //Default Data for time Picker
@@ -27,6 +27,8 @@ export default class TimePicker extends React.PureComponent {
                     selectedValue={hours}
                     style={styles.hours}
                     onValueChange={handleHoursChange}
+                    prompt={'Hours'}
+                    mode={'dialog'}
                 >
                     {
                         hoursList.map((hour, index) => (
@@ -38,6 +40,8 @@ export default class TimePicker extends React.PureComponent {
                     selectedValue={mins}
                     style={styles.mins}
                     onValueChange={handleMinsChange}
+                    prompt={'Mins'}
+                    mode={'dialog'}
                 >
                     {
                         minsList.map((min, index) => (
@@ -49,6 +53,7 @@ export default class TimePicker extends React.PureComponent {
                     selectedValue={part}
                     style={styles.part}
                     onValueChange={handlePartChange}
+                    mode={'dialog'}
                 >
                     {
                         partList.map((part, index) => (
@@ -73,8 +78,10 @@ TimePicker.propTypes = {
 
 const styles = StyleSheet.create({
     container: {
+        height: 40,
         flex: 1,
         flexDirection: 'row',
+        backgroundColor: 'red',
     },
     column: {
         flexDirection: 'row',

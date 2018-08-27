@@ -6,13 +6,14 @@ import {
     TouchableOpacity,
     StyleSheet,
     Modal,
+    Platform
 } from 'react-native';
 import Colors from '../constants/Colors';
 import StyledText from './StyledText';
 import TimePicker from './TimePicker';
 import moment from 'moment';
 
-class TimePickerModal extends React.PureComponent {
+class CustomModal extends React.PureComponent {
     state = {
         backgroundColor: {},
         hours: '8',
@@ -117,9 +118,9 @@ class TimePickerModal extends React.PureComponent {
     }
 };
 
-export default TimePickerModal;
+export default CustomModal;
 
-TimePickerModal.propTypes = {
+CustomModal.propTypes = {
     modalVisible: PropTypes.bool.isRequired,
     closeModal: PropTypes.func.isRequired,
     cancelStyle: PropTypes.oneOfType([
@@ -179,7 +180,8 @@ const styles = StyleSheet.create({
         color: Colors.contentGrey,
     },
     bodyContainer: {
-        height: 200,
+        height: Platform.OS === 'ios' ? 200 : 50,
+        paddingTop: Platform.OS === 'ios' ? 0 : 20,
     },
     cancelStyle: {
         color: '#D8283C'
