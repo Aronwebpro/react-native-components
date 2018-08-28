@@ -1,6 +1,6 @@
 ## Modal to pick Time with Native UI styles for React Native
 
-This is simple solution if you need Modal to pick time. I for iOS I'm using Modal with custom time picker, for Android using React Native TimePickerAndroid Component. 
+This is simple solution if you need Modal to pick time. This is for iOS only, because Android has React Native Component TimePickerAndroid to pick time. 
 
 ## Demo iOS:
 
