@@ -4,4 +4,4 @@ This is simple solution if you need Modal to pick time. This is for iOS only, be
 
 ## Demo iOS:
 
-<img src="https://github.com/Aronwebpro/react-native-toolkit/blob/master/TimePickerModal/timePicker.gif" alt="Time Picker Demo" width="300px" height="auto">
+<img src="https://github.com/Aronwebpro/react-native-toolkit/blob/master/TimePickerModal/timePickerSample.gif" alt="Time Picker Demo" width="300px" height="auto">
