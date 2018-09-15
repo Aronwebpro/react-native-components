@@ -6,7 +6,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
-//Default Data for time Picker
+//Default Options for Time Picker
 const hoursList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 const minsList = Array.apply(null, {length: 60}).map((min, index) => index < 10 ? `0${index }` : `${index}`);
 const partList = ['AM', 'PM'];
