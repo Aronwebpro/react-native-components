@@ -13,7 +13,7 @@ import StyledText from './StyledText';
 import TimePicker from './TimePicker';
 import moment from 'moment';
 
-class CustomModal extends React.PureComponent {
+class PickUpTimeModal extends React.PureComponent {
     state = {
         backgroundColor: {},
         hours: '8',
@@ -118,9 +118,9 @@ class CustomModal extends React.PureComponent {
     }
 };
 
-export default CustomModal;
+export default PickUpTimeModal;
 
-CustomModal.propTypes = {
+PickUpTimeModal.propTypes = {
     modalVisible: PropTypes.bool.isRequired,
     closeModal: PropTypes.func.isRequired,
     cancelStyle: PropTypes.oneOfType([
