@@ -1,56 +1,72 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import { Text, StyleSheet } from 'react-native';
-import Colors from '../constants/Colors';
+import PropTypes from 'prop-types';
+import { Text } from 'react-native';
 
-const StyledText = incomingProps => {
-    const { style, size, bold, ...props } = incomingProps;
-    // Size
-    let fontSize = 12;
-    switch (size) {
-        case 'small':
-            fontSize = 10;
-            break;
-        case 'body':
-            fontSize = 12;
-            break;
-        case 'upperbody' :
-            fontSize = 14;
-            break;
-        case 'subheader':
-            fontSize = 16;
-            break;
-        case 'header':
-            fontSize = 20;
-            break;
-        case 'headline' :
-            fontSize = 23;
-            break;
-        case 'extra-large':
-            fontSize = 32;
-            break;
+export default class StyledText extends React.Component {
+    render() {
+        const { size, color } = this.props;
+
+        // Size
+        let fontSize = 17;
+        let fontWeight = '400';
+        const propStyles = {};
+        //Handler Font Size
+        switch (size) {
+            case 'xx_large':
+                propStyles.fontSize = 48;
+                break;
+            case 'x_large':
+                 propStyles.fontSize = 42;
+                break;
+            case 'large_title':
+                 propStyles.fontSize = 34;
+                break;
+            case 'title_1':
+                 propStyles.fontSize = 28;
+                break;
+            case 'title_2' :
+                 propStyles.fontSize = 22;
+                break;
+            case 'title_3':
+                 propStyles.fontSize = 20;
+                break;
+            case 'headline':
+                 propStyles.fontSize = 17;
+                propStyles.fontWeight = '600';
+                break;
+            case 'body' :
+                 propStyles.fontSize = 17;
+                break;
+            case 'callout':
+                 propStyles.fontSize = 16;
+                break;
+            case 'subhead':
+                 propStyles.fontSize = 15;
+                break;
+            case 'footnote':
+                 propStyles.fontSize = 13;
+                break;
+            case 'caption_1':
+                 propStyles.fontSize = 12;
+                break;
+            case 'caption_2':
+                 propStyles.fontSize = 11;
+                break;
+        }
+
+        //Handle Color
+        color ? propStyles.color = color : '';
+
+        return (
+            <Text
+                {...this.props}
+                style={[this.props.style, propStyles]}
+            />
+        )
     }
-    // Font
-    //const fontFamily = bold ? 'open-sans-bold': 'open-sans-regular';
-    const propStyles = {
-        fontSize: style.fontSize || fontSize
-    };
-    return (
-        <Text
-            {...props}
-            style={[style, propStyles ]}
-        />
-    );
-};
-
-StyledText.defaultProps = {
-    size: 'body',
-    style: {},
-};
+}
 
 StyledText.propTypes = {
-    style: PropTypes.oneOfType([PropTypes.number, PropTypes.object, PropTypes.array]),
-    size: PropTypes.oneOf(['small', 'body', 'upperbody', 'subheader', 'header', 'headline', 'extra-large']),
+    size: PropTypes.string,
+    color: PropTypes.string
 };
-
-export default StyledText;
